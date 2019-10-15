@@ -16,25 +16,34 @@ namespace SweepStakes
         public static string GetFirstName()
         {
             Console.WriteLine("What is your first name?");
-            Console.ReadLine();
+            string firstName = Console.ReadLine();
+            return firstName;
         }
 
         public static string GetLastName()
         {
             Console.WriteLine("What is your last name?");
-            Console.ReadLine();
+            string lastName = Console.ReadLine();
+            return lastName;
         }
 
         public static string GetEmailAddress()
         {
             Console.WriteLine("What is your email address?");
-            Console.ReadLine();
+            string emailAddress = Console.ReadLine();
+            return emailAddress;
         }
 
         public static int GetRegistrationNumber()
         {
             Console.WriteLine("What is your registration Number?");
-            Console.ReadLine();
+            int registrationNumber = int.Parse(Console.ReadLine());
+            return registrationNumber;
+        }
+
+        public static void NewLine()
+        {
+            Console.WriteLine("");
         }
     }
 }
