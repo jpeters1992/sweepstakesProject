@@ -8,19 +8,17 @@ namespace SweepStakes
 {
     public class SweepstakesStackManager : ISweepstakesManager
     {
-        public string FirstName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string LastName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string EmailAddress { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int RegistrationNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public Sweepstakes GetSweepstakes()
-        {
-            throw new NotImplementedException();
-        }
+        Stack<Sweepstakes> sweepstakesStack = new Stack<Sweepstakes>();
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            sweepstakesStack.Push(sweepstakes);
         }
+
+        public Sweepstakes GetSweepstakes()
+        {
+            return sweepstakesStack.Pop();
+        }
+
     }
 }
