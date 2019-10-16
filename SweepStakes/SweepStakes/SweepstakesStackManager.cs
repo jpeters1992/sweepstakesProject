@@ -17,6 +17,7 @@ namespace SweepStakes
 
         public Sweepstakes GetSweepstakes()
         {
+            Console.WriteLine("Notifcation: sweepstake removed from Stack");
             return sweepstakesStack.Pop();
         }
 

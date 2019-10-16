@@ -17,6 +17,7 @@ namespace SweepStakes
 
         public Sweepstakes GetSweepstakes()
         {
+            Console.WriteLine("Notification: sweepstake removed from Queue");
             return sweepstakesQueue.Dequeue();
         }
 

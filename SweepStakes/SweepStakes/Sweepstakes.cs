@@ -38,7 +38,7 @@ namespace SweepStakes
         {
             Random randomContestant = new Random();
             winningNumber = randomContestant.Next(1, maxNumber + 1);
-            foreach (KeyValuePair<int, string> contestant in contestantsDictionary)
+            foreach (KeyValuePair<int, Contestant> contestant in contestantsDictionary)
             {
                 if (contestant.Key == winningNumber)
                 {
@@ -46,7 +46,6 @@ namespace SweepStakes
                 }
             }
             return null;
-
         }
 
         public void PrintContestantInfo(Contestant contestant)

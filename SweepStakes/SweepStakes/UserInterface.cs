@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    public static class UserInterface //use a STATIC class when you only care about the output
+    public static class UserInterface 
     {
         //MEMBER VARIABLES
-        static int registrationNumber = 0;
+        public static int registrationNumber = 0;
 
         //CONSTRUCTOR
 
@@ -35,16 +35,41 @@ namespace SweepStakes
             return emailAddress;
         }
 
-        public static int GetRegistrationNumber() //build out this RNG
+        public static int GetRegistrationNumber(int randomResult) //build out this RNG
         {
-            Console.WriteLine("Here is your registration number!");
-            int registrationNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Here is your registration number" +randomResult);
             return registrationNumber;
+        }
+
+        public static int RandomNumber()
+        {
+            Random randomRegNumber = new Random();
+            int randomResult = randomRegNumber.Next();
+            return randomResult;
         }
 
         public static void NewLine()
         {
             Console.WriteLine("");
+        }
+
+        public static string PickStackOrQueue()
+        {
+            Console.WriteLine("Please type one of these keywords: 'stack' or 'queue'");
+            string managerSelection = Console.ReadLine();
+            switch (managerSelection)
+            {
+                case "stack":
+                    managerSelection = new SweepstakesStackManager();
+                    break;
+                case "queue":
+                    managerSelection = new SweepstakesQueueManager();
+                    break;
+                default:
+                    Console.WriteLine("Not a valid choice, please make a valid selection.");
+                    break;
+
+            }
         }
     }
 }
