@@ -10,7 +10,7 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
-            Contestant contestantOne = new Contestant();
+            Contestant contestant = new Contestant();
         }
     }
 }

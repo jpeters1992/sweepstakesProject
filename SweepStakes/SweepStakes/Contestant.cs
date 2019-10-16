@@ -65,6 +65,7 @@ namespace SweepStakes
                 registrationNumber = value;
             }
         }
+
         //CONSTRUCTOR
 
         public Contestant()

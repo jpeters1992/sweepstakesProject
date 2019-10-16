@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    public static class UserInterface
+    public static class UserInterface //use a STATIC class when you only care about the output
     {
         //MEMBER VARIABLES
 
@@ -34,9 +34,9 @@ namespace SweepStakes
             return emailAddress;
         }
 
-        public static int GetRegistrationNumber()
+        public static int GetRegistrationNumber() //build out this RNG
         {
-            Console.WriteLine("What is your registration Number?");
+            Console.WriteLine("Here is your registration number!");
             int registrationNumber = int.Parse(Console.ReadLine());
             return registrationNumber;
         }
