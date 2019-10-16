@@ -9,6 +9,7 @@ namespace SweepStakes
     public static class UserInterface //use a STATIC class when you only care about the output
     {
         //MEMBER VARIABLES
+        static int registrationNumber = 0;
 
         //CONSTRUCTOR
 

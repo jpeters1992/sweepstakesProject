@@ -12,7 +12,7 @@ namespace SweepStakes
         public string name;
         public int maxNumber;
         public int winningNumber;
-        public IDictionary<int, string> contestantsDictionary = new Dictionary<int, string>();
+        public Dictionary<int, Contestant> contestantsDictionary = new Dictionary<int, Contestant>();
         
         //CONSTRUCTOR
 
@@ -24,14 +24,7 @@ namespace SweepStakes
 
         public void RegisterContestant(Contestant contestant)
         {
-            contestant.FirstName = UserInterface.GetFirstName();
-            UserInterface.NewLine();
-            contestant.LastName = UserInterface.GetLastName();
-            UserInterface.NewLine();
-            contestant.EmailAddress = UserInterface.GetEmailAddress();
-            UserInterface.NewLine();
-            contestant.RegistrationNumber = UserInterface.GetRegistrationNumber();
-            UserInterface.NewLine();
+            // this is where i store my contestant into the dictionary.
 
             PrintContestantInfo(contestant);
 
