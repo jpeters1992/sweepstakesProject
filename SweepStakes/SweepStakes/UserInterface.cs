@@ -9,8 +9,7 @@ namespace SweepStakes
     public static class UserInterface 
     {
         //MEMBER VARIABLES
-        public static int registrationNumber = 0;
-
+   
         //CONSTRUCTOR
 
         //MEMBER METHODS
@@ -35,17 +34,9 @@ namespace SweepStakes
             return emailAddress;
         }
 
-        public static int GetRegistrationNumber(int randomResult) //build out this RNG
+        public static Guid GetRegistrationNumber()
         {
-            Console.WriteLine("Here is your registration number" +randomResult);
-            return registrationNumber;
-        }
-
-        public static int RandomNumber()
-        {
-            Random randomRegNumber = new Random();
-            int randomResult = randomRegNumber.Next();
-            return randomResult;
+            return Guid.NewGuid();
         }
 
         public static void NewLine()
@@ -53,22 +44,19 @@ namespace SweepStakes
             Console.WriteLine("");
         }
 
-        public static string PickStackOrQueue()
+        public static ISweepstakesManager PickStackOrQueue()
         {
             Console.WriteLine("Please type one of these keywords: 'stack' or 'queue'");
-            string managerSelection = Console.ReadLine();
-            switch (managerSelection)
+            string choice = Console.ReadLine();
+            switch (choice)
             {
                 case "stack":
-                    managerSelection = new SweepstakesStackManager();
-                    break;
+                    return new SweepstakesStackManager();                    
                 case "queue":
-                    managerSelection = new SweepstakesQueueManager();
-                    break;
+                    return new SweepstakesQueueManager();                    
                 default:
-                    Console.WriteLine("Not a valid choice, please make a valid selection.");
-                    break;
-
+                    throw new ApplicationException(string.Format("Not a valid manager choice")); 
+                    
             }
         }
     }

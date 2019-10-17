@@ -8,11 +8,6 @@ namespace SweepStakes
 {
     public interface ISweepstakesManager
     {
-        //MEMBER VARIABLES
-
-        //CONSTRUCTOR
-
-        //MEMBER METHODS
         void InsertSweepstakes(Sweepstakes sweepstakes);
 
         Sweepstakes GetSweepstakes();

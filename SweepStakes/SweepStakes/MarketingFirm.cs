@@ -10,13 +10,14 @@ namespace SweepStakes
     {
         //MEMBER VARIABLES
         public ISweepstakesManager manager;
+
         //CONSTRUCTOR
 
         //MEMBER METHODS
          
         public void ChooseManager()
         {
-            manager = UserInterface.PickStackOrQueue;
+            manager = UserInterface.PickStackOrQueue();
         }
 
         public void CreatSweepstake()
@@ -30,6 +31,16 @@ namespace SweepStakes
         public void RunSweepstake(Sweepstakes newSweepstake)
         {
             
+        }
+
+        public void BuildSweepstake (Sweepstakes sweepstake)
+        {
+            for(int i = 0; i < sweepstake.maxNumber; i++)
+            {
+                Contestant contestantOne = new Contestant();
+
+                Console.WriteLine("Welcome to the " + sweepstake.name + " Sweepstakes!");
+            }
         }
     }
 }
